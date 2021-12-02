@@ -1,0 +1,27 @@
+function currentTimeDate() {
+  const today = new Date();
+  const date =
+    today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
+  const time =
+    today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  const dateTime = date + "-" + time;
+  console.log(dateTime);
+  return dateTime;
+}
+
+fs.writeFile(
+  `./currenttimestamp/Current-dateTime.txt`,
+  currentTimeDate(),
+  (err) => {
+    console.log("File Created Successfully");
+  }
+);
+
+// let d=new Date().toString();
+// let d1= new Date().toISOString();
+// console.log(d,d1);
+
+// let date=new Date().toISOString().replace(/:/g, '-');
+// fs.writeFile(date+".txt",date,(err)=>{
+//     if (err) throw err;
+//     console.log('The file has been saved!'); })
